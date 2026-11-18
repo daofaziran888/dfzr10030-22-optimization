@@ -70,3 +70,19 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .analysis-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; padding: 12px 0; }
 .analysis-bar { flex: 1; border-radius: 4px 4px 0 0; background: var(--brand); min-width: 24px; position: relative; transition: height 0.4s; }
 .analysis-bar span { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--muted); white-space: nowrap; }
+/* 规则责任快照 */
+.scope-bar { align-items: flex-end; }
+.scope-bar select, .filter-item select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: #fff; }
+.scope-hint { font-size: 12px; color: var(--muted); align-self: center; }
+.scope-note { font-size: 12px; color: #b54708; background: #fffaeb; border: 1px solid #fedf89; border-radius: 6px; padding: 8px 10px; margin: 8px 0; }
+.snapshot-panel { margin-top: 16px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+.snapshot-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.snapshot-head h3 { font-size: 14px; margin: 0; }
+.snapshot-head span { font-size: 12px; color: var(--muted); }
+.snapshot-foot { font-size: 12px; color: var(--muted); margin: 8px 0 0; }
+.snapshot-panel .empty-state { text-align: center; color: var(--muted); font-size: 13px; }
+.trend-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.trend-card { flex: 1; min-width: 180px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); }
+.trend-card strong { font-size: 14px; color: #1f2937; }
+.trend-abnormal { color: #b42318; }
+.link:disabled { color: var(--muted); cursor: not-allowed; }

@@ -14,6 +14,13 @@ class Store:
         self._tables: dict[str, list[dict[str, Any]]] = {
             name: [dict(row) for row in rows] for name, rows in SEED_ROWS.items()
         }
+        # 辅助表不进入业务模块清单/概览计数：规则责任快照是校验与监控之间的
+        # 协作产物，不应该被当成一个独立的 CRUD 模块展示。
+        self._aux_tables: dict[str, list[dict[str, Any]]] = {}
+
+    def aux_rows(self, name: str) -> list[dict[str, Any]]:
+        """读写辅助表（快照、监控回读记录、待处理清单）。"""
+        return self._aux_tables.setdefault(name, [])
 
     def module_names(self) -> list[str]:
         return sorted(self._tables)
